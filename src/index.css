@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Sora:wght@400;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-background: hsl(210 31% 8%);
+  --color-foreground: hsl(38 22% 92%);
+  
+  --color-card: hsl(212 26% 12%);
+  --color-card-foreground: hsl(38 22% 92%);
+  
+  --color-popover: hsl(210 31% 8%);
+  --color-popover-foreground: hsl(38 22% 92%);
+  
+  --color-primary: hsl(23 91% 58%);
+  --color-primary-foreground: hsl(210 31% 8%);
+  
+  --color-secondary: hsl(208 24% 20%);
+  --color-secondary-foreground: hsl(38 22% 92%);
+  
+  --color-muted: hsl(210 20% 17%);
+  --color-muted-foreground: hsl(210 12% 68%);
+  
+  --color-accent: hsl(187 63% 45%);
+  --color-accent-foreground: hsl(210 31% 8%);
+  
+  --color-destructive: hsl(4 73% 55%);
+  --color-destructive-foreground: hsl(38 22% 92%);
+  
+  --color-border: hsl(209 22% 24%);
+  --color-input: hsl(209 22% 24%);
+  --color-ring: hsl(23 91% 58%);
+
+  --radius-lg: 0.75rem;
+  --radius-md: 0.5rem;
+  --radius-sm: 0.25rem;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+}
+
+@layer base {
+  body {
+    min-height: 100vh;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: 'Space Grotesk', ui-sans-serif, sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    background-image:
+      radial-gradient(65% 52% at 18% -8%, rgba(58, 171, 173, 0.22), transparent 65%),
+      radial-gradient(55% 44% at 88% -12%, rgba(246, 122, 53, 0.20), transparent 60%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.01), transparent 22%);
+    background-attachment: fixed;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: 'Sora', 'Space Grotesk', ui-sans-serif, sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+.glass {
+  background: linear-gradient(170deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.gradient-text {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(110deg, #f2893e 0%, #ffc96a 46%, #4ac5cc 100%);
+}
+
+.hero-gradient {
+  background:
+    radial-gradient(circle at 50% -18%, rgba(244, 133, 62, 0.30) 0%, rgba(244, 133, 62, 0) 48%),
+    radial-gradient(circle at 5% 8%, rgba(74, 197, 204, 0.20) 0%, rgba(74, 197, 204, 0) 34%),
+    radial-gradient(circle at 95% 10%, rgba(255, 204, 96, 0.16) 0%, rgba(255, 204, 96, 0) 35%);
+}
+
+.aurora-grid {
+  position: relative;
+}
+
+.aurora-grid::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 54px 54px;
+  mask-image: radial-gradient(ellipse at center, black 28%, transparent 82%);
+}
+
+.soft-panel {
+  background: linear-gradient(165deg, rgba(22, 37, 50, 0.88), rgba(15, 25, 34, 0.78));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.11), 0 20px 40px rgba(0, 0, 0, 0.30);
+}
+
+.badge-glow {
+  box-shadow: 0 0 0 1px rgba(244, 133, 62, 0.35), 0 8px 28px rgba(244, 133, 62, 0.25);
+}
+
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(244, 133, 62, 0.6) rgba(255, 255, 255, 0.05);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 999px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(244, 133, 62, 0.9), rgba(74, 197, 204, 0.8));
+  border-radius: 999px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
